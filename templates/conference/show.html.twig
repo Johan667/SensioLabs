@@ -6,7 +6,7 @@
     <h2>{{ conference }} Conference</h2>
 
     {% if comments|length > 0 %}
-        <div>There are {{ comments|length }} comments.</div>
+        <div>Il y à actuellement {{ comments|length }} commentaires.</div>
 
         {% for comment in comments %}
             {% if comment.picture %}
@@ -17,13 +17,13 @@
         {% endfor %}
 
         {% if previous >= 0 %}
-            <a href="{{ path('conference', { id: conference.id, offset: previous }) }}">Previous</a>
+            <a href="{{ path('conference', { id: conference.id, offset: previous }) }}">Precedent</a>
         {% endif %}
         {% if next < comments|length %}
-            <a href="{{ path('conference', { id: conference.id, offset: next }) }}">Next</a>
+            <a href="{{ path('conference', { id: conference.id, offset: next }) }}">Suivant</a>
         {% endif %}
     {% else %}
-        <div>No comments have been posted yet for this conference.</div>
+        <div>Pas encore de commentaire.</div>
     {% endif %}
 
 {% endblock %}
