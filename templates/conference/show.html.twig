@@ -16,6 +16,10 @@
             <p>{{ comment.text }}</p>
         {% endfor %}
 
+        <h2>Ajoutez votre avis</h2>
+
+            {{ form(comment_form) }}
+
         {% if previous >= 0 %}
             <a href="{{ path('conference', { id: conference.id, offset: previous }) }}">Precedent</a>
         {% endif %}
