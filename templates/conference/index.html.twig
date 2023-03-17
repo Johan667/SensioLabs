@@ -4,11 +4,20 @@
 
 {% block body %}
     <h2 class="text-center mt-3">Donne ton avis !</h2>
-
-    {% for conference in conferences %}
-        <h4>{{ conference }}</h4>
-                <p>
-                    <a href="{{ path('conference', { id: conference.id }) }}">Voir</a>
-                </p>
-    {% endfor %}
+    <div class="row">
+        {% for conference in conferences %}
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        {{ conference }}
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p><a href="{{ path('conference', { id: conference.id }) }}">Voir</a></p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
